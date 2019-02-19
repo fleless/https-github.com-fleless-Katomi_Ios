@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "last.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fahmi_clock2.png",
       "scale" : "2x"
     },
     {

@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "logOut.png",
+      "filename" : "exit (3).png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "exit (4).png",
       "scale" : "2x"
     },
     {

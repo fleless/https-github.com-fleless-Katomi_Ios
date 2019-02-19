@@ -10,7 +10,6 @@ class CameraController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotosTapped(_:)))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ItemCell")
         addPhotosTapped(navigationItem.rightBarButtonItem!)
@@ -28,11 +27,14 @@ class CameraController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        //self.viewDidLoad()
+        //navigationController?.pushViewController(captureController, animated: true)
         //addPhotosTapped(navigationItem.rightBarButtonItem!)
     }
     
     @objc func addPhotosTapped(_: AnyObject) {
-        present(captureController, animated: true, completion: nil)
+        navigationController?.pushViewController(captureController, animated: true)
+        //present(captureController, animated: true, completion: nil)
     }
     
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {

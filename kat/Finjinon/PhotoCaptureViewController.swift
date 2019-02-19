@@ -69,7 +69,8 @@ open class PhotoCaptureViewController: UIViewController, PhotoCollectionViewLayo
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black
-        
+ 
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: nil) { (_) -> Void in
             switch UIDevice.current.orientation {
             case .faceDown, .faceUp, .unknown:
@@ -80,6 +81,14 @@ open class PhotoCaptureViewController: UIViewController, PhotoCollectionViewLayo
             }
         }
     }
+    
+    override open func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.setStatusBarHidden(false, with: .slide)
+        /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "logged") as! UINavigationController
+        self.present(vc, animated: true, completion: nil)*/
+    }
+
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -247,12 +256,7 @@ open class PhotoCaptureViewController: UIViewController, PhotoCollectionViewLayo
         }
     }
     
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        UIApplication.shared.setStatusBarHidden(false, with: .slide)
-    }
-    
+
     open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
@@ -480,9 +484,9 @@ open class PhotoCaptureViewController: UIViewController, PhotoCollectionViewLayo
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let modalVc = storyBoard.instantiateViewController(withIdentifier: "choose") as! patientPopUpViewController
                 //self.present(newViewController, animated: true, completion: nil)
-                modalVc.modalPresentationStyle = .overCurrentContext
+                //modalVc.modalPresentationStyle = .overCurrentContext
                 modalVc.lstPhotos = imagess
-                self.present(modalVc, animated: true, completion: nil)
+                self.navigationController?.pushViewController(modalVc, animated: true)
                 /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "picker") as! SelectFromGalleryViewController
                 self.present(vc, animated: true, completion: nil)*/
             }

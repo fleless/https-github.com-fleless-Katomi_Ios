@@ -10,8 +10,21 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ProfilePatientViewController: UIViewController {
-
+class ProfilePatientViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return lstAntecedentsTags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "antecell", for: indexPath)
+        let lbl:UILabel = cell.viewWithTag(141) as! UILabel
+        lbl.text = self.lstAntecedentsTags[indexPath.row]
+        let msg:UITextView = cell.viewWithTag(140) as! UITextView
+        msg.text = self.lstAntecedentsDesc[indexPath.row]
+        return cell
+    }
+    
+    @IBOutlet weak var collectionAntecedents: UICollectionView!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var anniversaire: UILabel!
     @IBOutlet weak var email: UILabel!
@@ -20,8 +33,10 @@ class ProfilePatientViewController: UIViewController {
     @IBOutlet weak var profession: UILabel!
     @IBOutlet weak var statut: UILabel!
     @IBOutlet weak var enfants: UILabel!
-    @IBOutlet weak var antecedants: UITextView!
     var id: String!
+    var lstAntecedentsTags : [String] = []
+    var lstAntecedentsDesc : [String] = []
+    var testString : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.backgroundColor = .white
@@ -79,17 +94,19 @@ class ProfilePatientViewController: UIViewController {
                     self.enfants.text = json["data"]["numberOfChildren"].string!
                     }else{self.enfants.text = "numero d'enfants indisponible"}
                     let ante = json["data"]["antecedents"];
-                    self.antecedants.text = ""
                     for res in ante {
-                        self.antecedants.text = "\(self.antecedants.text+res.0):\n"
+                        self.lstAntecedentsTags.append(res.0)
+                        self.testString = ""
                         if(res.0 == "test"){
-                            self.antecedants.text! += "      true \n"
+                          self.testString += "      true \n"
                         }else{
                         for lines in res.1{
-                            self.antecedants.text! += "      \(lines.0):     \(lines.1) \n"
+                            self.testString += "      \(lines.0) \n"
                         }
+                            self.lstAntecedentsDesc.append(self.testString)
                         }
                     }
+                    self.collectionAntecedents.reloadData()
                 }
         }
     }

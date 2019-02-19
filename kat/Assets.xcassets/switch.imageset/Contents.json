@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "swap-horizontal-orientation-arrows.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fahmi_clock.png",
       "scale" : "2x"
     },
     {

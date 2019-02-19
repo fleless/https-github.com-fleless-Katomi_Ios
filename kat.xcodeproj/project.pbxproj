@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60035B7015EBB385BC99BAA8 /* Pods_kat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D44A930B5D9AC10A6F14B09 /* Pods_kat.framework */; };
+		DA1A52B621796E310028637F /* gradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A52B521796E310028637F /* gradientView.swift */; };
 		DA24E2552136EFC000EEA575 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24E2542136EFC000EEA575 /* Doctor.swift */; };
 		DA24E2572137109100EEA575 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA24E2562137109100EEA575 /* HomeViewController.swift */; };
 		DA26917821355D61000C1C69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26917721355D61000C1C69 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 		DA26918521355D64000C1C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA26918321355D64000C1C69 /* LaunchScreen.storyboard */; };
 		DA26918D21357FB7000C1C69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26918C21357FB7000C1C69 /* LoginViewController.swift */; };
 		DA26919021358DDA000C1C69 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26918F21358DDA000C1C69 /* customButton.swift */; };
+		DA28E29B217935E60020D1D6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28E29A217935E60020D1D6 /* CustomCell.swift */; };
 		DA55BDA92153DCDF0022BDAA /* Consultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55BDA82153DCDF0022BDAA /* Consultation.swift */; };
 		DA55BDAB2153DCF40022BDAA /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55BDAA2153DCF40022BDAA /* Criteria.swift */; };
 		DA55BDAD2153DD130022BDAA /* SubstringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55BDAC2153DD130022BDAA /* SubstringExtension.swift */; };
@@ -52,12 +54,16 @@
 		DAD51F062148950200CA432A /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD51F052148950200CA432A /* TimeLineViewController.swift */; };
 		DAD51F082148954400CA432A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD51F072148954400CA432A /* MainTableViewCell.swift */; };
 		DAD51F0A2148958C00CA432A /* InsideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD51F092148958C00CA432A /* InsideCollectionViewCell.swift */; };
+		DADC2C1B2180D34B003EA141 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC2C1A2180D34B003EA141 /* CalendarViewController.swift */; };
+		DADC2C1D2180D3A6003EA141 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC2C1C2180D3A6003EA141 /* CalendarTableViewCell.swift */; };
+		DADC2C1F2180D3C7003EA141 /* CalendarConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC2C1E2180D3C7003EA141 /* CalendarConsultation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5BC9533114F2D673E23E13FE /* Pods-kat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kat.release.xcconfig"; path = "Pods/Target Support Files/Pods-kat/Pods-kat.release.xcconfig"; sourceTree = "<group>"; };
 		908287C15CBFA62710067368 /* Pods-kat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kat/Pods-kat.debug.xcconfig"; sourceTree = "<group>"; };
 		9D44A930B5D9AC10A6F14B09 /* Pods_kat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1A52B521796E310028637F /* gradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradientView.swift; sourceTree = "<group>"; };
 		DA24E2542136EFC000EEA575 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		DA24E2562137109100EEA575 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DA26917421355D61000C1C69 /* kat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +76,7 @@
 		DA26918621355D64000C1C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA26918C21357FB7000C1C69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA26918F21358DDA000C1C69 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
+		DA28E29A217935E60020D1D6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		DA55BDA82153DCDF0022BDAA /* Consultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation.swift; sourceTree = "<group>"; };
 		DA55BDAA2153DCF40022BDAA /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
 		DA55BDAC2153DD130022BDAA /* SubstringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstringExtension.swift; sourceTree = "<group>"; };
@@ -106,6 +113,9 @@
 		DAD51F052148950200CA432A /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		DAD51F072148954400CA432A /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		DAD51F092148958C00CA432A /* InsideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCollectionViewCell.swift; sourceTree = "<group>"; };
+		DADC2C1A2180D34B003EA141 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		DADC2C1C2180D3A6003EA141 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		DADC2C1E2180D3C7003EA141 /* CalendarConsultation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarConsultation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 				DAAA7C3E213DB58100E2F84D /* Patient.swift */,
 				DA55BDA82153DCDF0022BDAA /* Consultation.swift */,
 				DA55BDAA2153DCF40022BDAA /* Criteria.swift */,
+				DADC2C1E2180D3C7003EA141 /* CalendarConsultation.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -195,6 +206,9 @@
 				DA55BDAC2153DD130022BDAA /* SubstringExtension.swift */,
 				DA55BDAE2153DD270022BDAA /* ComparingViewController.swift */,
 				DA928E12215D650F005E2F20 /* patientPopUpViewController.swift */,
+				DA28E29A217935E60020D1D6 /* CustomCell.swift */,
+				DADC2C1A2180D34B003EA141 /* CalendarViewController.swift */,
+				DADC2C1C2180D3A6003EA141 /* CalendarTableViewCell.swift */,
 			);
 			path = kat;
 			sourceTree = "<group>";
@@ -204,6 +218,7 @@
 			children = (
 				DA26918F21358DDA000C1C69 /* customButton.swift */,
 				DA7063BC21380F2700AE850A /* CardView.swift */,
+				DA1A52B521796E310028637F /* gradientView.swift */,
 			);
 			path = customDesign;
 			sourceTree = "<group>";
@@ -362,7 +377,10 @@
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JBDatePicker/JBDatePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleImageViewer/SimpleImageViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -376,7 +394,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JBDatePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -393,7 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADC2C1B2180D34B003EA141 /* CalendarViewController.swift in Sources */,
 				DAAA7C49213DD0F100E2F84D /* Buttons.swift in Sources */,
+				DA28E29B217935E60020D1D6 /* CustomCell.swift in Sources */,
 				DAAA7C5C213ED31800E2F84D /* ProfilePatientViewController.swift in Sources */,
 				DAAA7C47213DD0D800E2F84D /* AssetResolver.swift in Sources */,
 				DAAA7C4F213DD14A00E2F84D /* PhotoCaptureViewController.swift in Sources */,
@@ -410,13 +433,16 @@
 				DA26918021355D61000C1C69 /* kat.xcdatamodeld in Sources */,
 				DA24E2552136EFC000EEA575 /* Doctor.swift in Sources */,
 				DAAA7C53213DD19400E2F84D /* PhotoCollectionViewLayout.swift in Sources */,
+				DADC2C1D2180D3A6003EA141 /* CalendarTableViewCell.swift in Sources */,
 				DA7063BB21380DB100AE850A /* SelectFromGalleryViewController.swift in Sources */,
 				DAD51ED72146C5EF00CA432A /* CropView.swift in Sources */,
 				DA686B17214AD4BB0002D8CF /* OverlayExtension.swift in Sources */,
+				DA1A52B621796E310028637F /* gradientView.swift in Sources */,
 				DA55BDAB2153DCF40022BDAA /* Criteria.swift in Sources */,
 				DA26917A21355D61000C1C69 /* ViewController.swift in Sources */,
 				DAD51EDA2146C62000CA432A /* CropViewController.swift in Sources */,
 				DAD51EDE2146C65200CA432A /* UIImage+Crop.swift in Sources */,
+				DADC2C1F2180D3C7003EA141 /* CalendarConsultation.swift in Sources */,
 				DA686B15214AC39E0002D8CF /* PopUpViewController.swift in Sources */,
 				DA26917821355D61000C1C69 /* AppDelegate.swift in Sources */,
 				DA24E2572137109100EEA575 /* HomeViewController.swift in Sources */,
@@ -506,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -560,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

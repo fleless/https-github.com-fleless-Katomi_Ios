@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bienvenueLbl.text = "Bonjour Dr. "+AppDelegate.currentDoctor.firstname+" "+AppDelegate.currentDoctor.lastname
+        bienvenueLbl.text = "Bienvenue Dr. "+AppDelegate.currentDoctor.firstname+" "+AppDelegate.currentDoctor.lastname
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,12 +33,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func dossiersMedicalesPatients(_ sender: Any) {
-        print("ok")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "calendar") as! CalendarViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func gestionRendezVous(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "first") as! ViewController
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func ResauxInterpro(_ sender: Any) {

@@ -1,7 +1,4 @@
 //
-//  ViewController.swift
-//  TableViewCustomCell
-//
 //  Created by fahmex on 9/11/18.
 //  Copyright © 2018 fahmex. All rights reserved.
 //
@@ -40,8 +37,8 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barTintColor = .white
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 320
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 320
         self.compareBtn.isEnabled = false
         self.cache = NSCache()
         GetConsultations()
@@ -92,7 +89,10 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
                             if let criteria = res.1["postExamIndexCriteria"].array {
                                 for i in criteria {
                                     let c_name = i["index"].string!
-                                    let c_value = i["value"].string!
+                                    var c_value = ""
+                                    if i["value"].string != nil{
+                                       c_value = i["value"].string!
+                                    }
                                     self.criterias.append(Criteria(c_name: c_name, c_value: c_value))
                                     textC.append(c_name + ": " + c_value + "\n")
                                 }
@@ -106,7 +106,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
                 DispatchQueue.main.async {
-                    self.GetImagesPerConsultation()
+                    print("tyty3")
                     self.GetConsultationPurposes()
                 }
         }
@@ -115,7 +115,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
     func GetConsultationPurposes() {
         
         for var t in 0 ..< self.consultations.count {
-            self.consultationMOTIFES.append("non valide")
+            self.consultationMOTIFES.append("aucun motif")
             if (self.consultations[t].consultationPurpose == "non valide") {
             }
             else {
@@ -145,12 +145,20 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
                             do{
                                 let jsonKbira = JSON(value)
                                 var motif = String()
+                                if jsonKbira["data"]["label"].string != nil{
                                 motif = jsonKbira["data"]["label"].string!
+                                }else {
+                                    motif = "Inconnu"
+                                }
                                 self.consultationMOTIFES[t] = motif
                                 t += 1
                             }
                         }
                 }
+            }
+            DispatchQueue.main.async {
+                print("tyty2")
+                self.GetImagesPerConsultation()
             }
         }
     }
@@ -195,7 +203,9 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                     }
                     DispatchQueue.main.async {
+                        print("tyty1")
                         if(self.consultationImages.count == self.consultations.count){
+                            print("tyty")
                             self.tableView.reloadData()
                         }
                     }
@@ -208,6 +218,7 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(self.consultations[indexPath.row].images.count != 0){
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
         let collec:UICollectionView = cell.viewWithTag(103) as! UICollectionView
         collec.reloadData()
@@ -222,6 +233,23 @@ class TimeLineViewController: UIViewController, UITableViewDelegate, UITableView
         cell.timeLbl.text = self.consultations[indexPath.row].time
         
         return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "vide") as! UITableViewCell
+            let lblDate:UILabel = cell.viewWithTag(881) as! UILabel
+            lblDate.text = self.consultations[indexPath.row].date
+            let lblTime:UILabel = cell.viewWithTag(880) as! UILabel
+            lblTime.text = self.consultations[indexPath.row].time
+            let lblMotif:UILabel = cell.viewWithTag(882) as! UILabel
+            lblMotif.text = self.consultationMOTIFES[indexPath.row]
+
+           // cell.motifLbl.text = self.consultationMOTIFES[indexPath.row]
+            
+            //cell.descriptionLbl.text = self.consultations[indexPath.row].criterias
+            
+           // cell.timeLbl.text = self.consultations[indexPath.row].date
+          //  cell.dateLabel.text = self.consultations[indexPath.row].time
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -84,7 +84,7 @@ class PopUpViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("gramma\(consultationId)")
+        print("gramma\(lstPhotos)")
         if(consultationId == "pas de consultation"){
         getAllMotifs()
             print("getAll")
@@ -102,10 +102,6 @@ class PopUpViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.reloadView()
         }
         searchMotifBtn.addTarget(self, action: #selector(PopUpViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
-    }
-    
-    @IBAction func Quit(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     func getAllMotifs(){
@@ -330,8 +326,10 @@ class PopUpViewController: UIViewController, UICollectionViewDelegate, UICollect
             Alamofire.request(url, method: .post, parameters: parametres, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON{ response in
                     switch response.result{
-                    case .failure(let error):
-                        let alert = UIAlertController(title: "Erreur", message: "Connexion trop lente", preferredStyle: UIAlertControllerStyle.alert)
+                    case .failure(let _):
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "logged") as! UINavigationController
+                        self.present(vc, animated: true, completion: nil)
+                        /*let alert = UIAlertController(title: "Erreur", message: "Connexion trop lente\(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                             switch action.style{
                             case .default:
@@ -344,7 +342,7 @@ class PopUpViewController: UIViewController, UICollectionViewDelegate, UICollect
                         }))
                         self.present(alert, animated: true, completion: nil)
                         self.confirmerBtn.isEnabled = true
-                        print("\(error.localizedDescription)erreur")
+                        print("\(error.localizedDescription)erreur")*/
                     case .success(let value):
                         _ = JSON(value)
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "logged") as! UINavigationController

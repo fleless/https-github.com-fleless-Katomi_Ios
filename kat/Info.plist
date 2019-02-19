@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mailto</string>
+				<string>tel</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>photo allowed</string>
 	<key>NSCameraUsageDescription</key>

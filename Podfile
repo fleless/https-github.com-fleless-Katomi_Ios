@@ -12,6 +12,8 @@ target 'kat' do
     pod 'IQKeyboardManagerSwift'
     pod 'M13Checkbox'
     pod 'ReachabilitySwift'
+    pod 'JTAppleCalendar'
+    pod 'JBDatePicker'
 end
 # Workaround for Cocoapods issue #7606
 post_install do |installer|

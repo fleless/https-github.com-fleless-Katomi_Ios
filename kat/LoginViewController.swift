@@ -130,7 +130,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
-        
+        UIApplication.shared.openURL(NSURL(string: "https://app.katomi.co/login")! as URL)
     }
     
     func saveCookies(response: DataResponse<Any>) {

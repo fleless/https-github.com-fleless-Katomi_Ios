@@ -20,7 +20,6 @@ class ComparingViewController: UIViewController, UICollectionViewDelegate, UICol
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barTintColor = .white
-        
         collectionView.dataSource = self
         collectionView.delegate = self
     }

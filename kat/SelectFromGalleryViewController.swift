@@ -74,6 +74,7 @@ class SelectFromGalleryViewController: UIViewController , UICollectionViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addImagesClicked(btnEnregistrer);
         searchTextField.theme.font = UIFont.systemFont(ofSize: 15)
         searchTextField.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.6)
         btnEnregistrer.titleLabel?.minimumScaleFactor = 0.5
@@ -312,13 +313,12 @@ class SelectFromGalleryViewController: UIViewController , UICollectionViewDelega
             
             refreshAlert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action: UIAlertAction!) in
                 let modalVc = self.storyboard?.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController
-                modalVc.modalPresentationStyle = .overCurrentContext
                 modalVc.lstPhotos = self.PhotoArray
                 modalVc.consultationId = cons
                 modalVc.motif = motif
                 modalVc.patientId = id
                 self.btnEnregistrer.isEnabled = true
-                self.present(modalVc, animated: true, completion: nil)
+                self.navigationController?.pushViewController(modalVc, animated: true)
             }))
             refreshAlert.addAction(UIAlertAction(title: "Annuler", style: .default, handler: { (action: UIAlertAction!) in
                 self.btnEnregistrer.isEnabled = true
@@ -330,13 +330,12 @@ class SelectFromGalleryViewController: UIViewController , UICollectionViewDelega
             
             refreshAlert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action: UIAlertAction!) in
                 let modalVc = self.storyboard?.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController
-                modalVc.modalPresentationStyle = .overCurrentContext
                 modalVc.lstPhotos = self.PhotoArray
                 modalVc.consultationId = cons
                 modalVc.motif = motif
                 modalVc.patientId = id
                 self.btnEnregistrer.isEnabled = true
-                self.present(modalVc, animated: true, completion: nil)
+                self.navigationController?.pushViewController(modalVc, animated: true)
             }))
             refreshAlert.addAction(UIAlertAction(title: "Annuler", style: .default, handler: { (action: UIAlertAction!) in
                 self.btnEnregistrer.isEnabled = true
@@ -367,13 +366,12 @@ class SelectFromGalleryViewController: UIViewController , UICollectionViewDelega
                 case .success( let value):
                     let json = JSON(value)
                     let modalVc = self.storyboard?.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController
-                    modalVc.modalPresentationStyle = .overCurrentContext
                     modalVc.lstPhotos = self.PhotoArray
                     modalVc.consultationId = json["data"]["_id"].string!
                     modalVc.motif = "pas de motif"
                     modalVc.patientId = id
                     self.btnEnregistrer.isEnabled = true
-                    self.present(modalVc, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(modalVc, animated: true)
                 }
         }
     }
